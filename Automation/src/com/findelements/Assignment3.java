@@ -25,7 +25,7 @@ public class Assignment3 {
 		
 		Thread.sleep(5000);
 		
-		List<WebElement>menu=driver.findElements(By.xpath("//div[@data-ved='0ahUKEwjz6fzN4aDlAhUSYysKHQEaCrUQGggt']/descendant::h3")); 
+		List<WebElement>menu=driver.findElements(By.xpath("//div[@class='med']/descendant::h3")); 
 		
 		for(WebElement name:menu)
 		{
