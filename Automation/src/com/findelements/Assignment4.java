@@ -1,6 +1,8 @@
 package com.findelements;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 
 public class Assignment4 {
@@ -25,7 +28,14 @@ public class Assignment4 {
 		Thread.sleep(6000);
 		
 		
-		List<WebElement>menu=driver.findElements(By.xpath("//div[@class='grid-view browse-page-var2 g34 row grid-view-result-active']/ul[@class='product-grid search-box-result']/descendant::div/div/span[2]/span/span")); 
+		List<WebElement>menu=driver.findElements(By.xpath("//div[@class='grid-view browse-page-var2 g34 row grid-view-result-active']/ul[@class='product-grid search-box-result']/descendant::div/div/span[2]/span/span"));
+		Actions a=new Actions(driver);
+		Robot r = new Robot();
+		
+		r.keyPress(KeyEvent.VK_PAGE_DOWN);
+		Thread.sleep(1000);
+		
+	
 		Thread.sleep(9000);
 		//div[@class='grid-view browse-page-var2 g34 row grid-view-result-active']/ul[@class='product-grid search-box-result']/descendant::div/div/span[2]/span
 		
