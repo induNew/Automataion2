@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,11 +33,13 @@ public class Assignment4 {
 		Actions a=new Actions(driver);
 		Robot r = new Robot();
 		
-		r.keyPress(KeyEvent.VK_PAGE_DOWN);
-		Thread.sleep(1000);
-		
-	
-		Thread.sleep(9000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		Thread.sleep(2000);
+		jse.executeScript("window.scrollBy(0,5000)");
+//		Thread.sleep(1000);
+//		
+//	
+//		Thread.sleep(9000);
 		//div[@class='grid-view browse-page-var2 g34 row grid-view-result-active']/ul[@class='product-grid search-box-result']/descendant::div/div/span[2]/span
 		
 		int xpathCount=menu.size();
