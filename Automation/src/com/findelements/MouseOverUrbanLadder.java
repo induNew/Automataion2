@@ -1,9 +1,18 @@
 package com.findelements;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -20,70 +29,58 @@ public class MouseOverUrbanLadder {
 	static {
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 	}
-	static int count = 15;
 
-	public static void screen(WebDriver driver, String name) throws IOException {
+	public static void writeData(String sheet, int row, int col, String data)
+			throws IOException, EncryptedDocumentException, InvalidFormatException {
+		FileInputStream fis = new FileInputStream("C:\\Users\\HP\\Desktop\\Book4.xlsx");
+		Workbook wb = WorkbookFactory.create(fis);
 
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File sc = ts.getScreenshotAs(OutputType.FILE);
-		File ff = new File("./Screenshot/" + name + ".png");
-		Files.copy(sc, ff);
-		count++;
+		wb.getSheet(sheet).createRow(row).createCell(col).setCellValue(data);
+		FileOutputStream fio = new FileOutputStream("C:\\Users\\HP\\Desktop\\Book4.xlsx");
+
+		wb.write(fio);
+		wb.close();
 
 	}
 
-	public static void main(String[] args) throws InterruptedException, IOException {
+	public static void main(String[] args)
+			throws InterruptedException, IOException, EncryptedDocumentException, InvalidFormatException {
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
 		driver.get("https://www.urbanladder.com");// load the url
-
+		Thread.sleep(6000);
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//a[@class=\"close-reveal-modal hide-mobile\"]")).click();// close the pop up
+		Thread.sleep(2000);
 
-		Thread.sleep(4000);
 		List<WebElement> menu = driver.findElements(By.xpath("//div[@id='topnav_wrapper']/ul/li"));// x path for getting
 																									// mouse over action
 		Actions a = new Actions(driver);// To perform mouse overAction
-		//
+
+		int row = 0;
 
 		for (WebElement name : menu) {
 			String menuName = name.getText();// to get the header text
 			System.err.println(menuName);// to get the headers in red color like error
 			a.moveToElement(name).build().perform();// to mouse over
-			MouseOverUrbanLadder.screen(driver, menuName);
 			Thread.sleep(1000);
+
+			List<WebElement> subMenu = driver.findElements(By
+					.xpath("//span[contains(.,'" + menuName + "')]/parent::li/descendant::ul[@class='taxonslist']/li"));
+			// for getting the submenus of different menu like concatination
+
+			writeData("Sheet1", row, 0, name.getText());
+			row++;
+
+			for (WebElement item : subMenu) {
+				System.out.println(item.getText());// display the submenus
+				int col;
+				writeData("Sheet1", row, 0, item.getText());
+				row++;
+			}
+
 		}
-
-		// Actions a = new Actions(driver);
-		// Thread.sleep(4000);
-
-		// for (WebElement name : menu) {
-		//
-		// a.moveToElement(name).build().perform();// to mouse over
-		// Thread.sleep(1000);
-		//
-		// }
-		// driver.findElement(By.xpath("//li[2]/a[@title='Diamond Rings']")).click();
-		// screen(driver);
-		// Thread.sleep(2000);
-		// driver.findElement(By.xpath("//div[@id='top-filter']/descendant::section[1]")).click();
-		// screen(driver);
-		// //// div[@id='top-filter']/descendant::section[1]
-		//
-		// // nav[@class=\"wh-navbar\"]/descendant::li[2]
-		// // div[@id='top-filter']/descendant::div[@class='content']
-		// List<WebElement> menu1 =
-		// driver.findElements(By.xpath("//form[@id=\"price\"]/div/div/span"));
-		// screen(driver);
-		// for (WebElement name : menu1) {
-		// String price = name.getText();
-		//
-		// System.out.println(price);
-		// }
-		//
-		// driver.findElement(By.xpath("//span[@class='view-by-wrap title style-outline
-		// i-right']")).click();
-		// screen(driver);
-		// }
 	}
 }
