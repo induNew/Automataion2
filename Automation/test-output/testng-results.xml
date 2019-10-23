@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29281" started-at="2019-10-23T19:45:27Z" finished-at="2019-10-23T19:45:56Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="29281" started-at="2019-10-23T19:45:27Z" finished-at="2019-10-23T19:45:56Z">
+      <class name="com.findelements.Scenario7New">
+        <test-method status="PASS" signature="beforeC()[pri:0, instance:com.findelements.Scenario7New@2aafb23c]" name="beforeC" is-config="true" duration-ms="22" started-at="2019-10-24T01:15:27Z" finished-at="2019-10-24T01:15:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeC -->
+        <test-method status="PASS" signature="beforeM()[pri:0, instance:com.findelements.Scenario7New@2aafb23c]" name="beforeM" is-config="true" duration-ms="15226" started-at="2019-10-24T01:15:27Z" finished-at="2019-10-24T01:15:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeM -->
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.findelements.Scenario7New@2aafb23c]" name="test1" duration-ms="14015" started-at="2019-10-24T01:15:42Z" finished-at="2019-10-24T01:15:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+      </class> <!-- com.findelements.Scenario7New -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

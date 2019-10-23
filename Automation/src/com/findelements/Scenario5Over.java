@@ -77,6 +77,31 @@ public class Scenario5Over {
 		}
 
 		driver.findElement(By.xpath("//span[@class='view-by-wrap title style-outline i-right']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='view-by-wrap title style-outline i-right']/following::div[6]/a")).click();
+		Thread.sleep(1000);
 		screen(driver);
+		
+		
+		List<WebElement> price = driver.findElements(By.xpath("//div[@class='grid-view browse-page-var2 g34 row grid-view-result-active']/ul/li/div[1]/div/div/a/img/following::span[4]"));
+		
+		Thread.sleep(2000);
+		
+		List<WebElement> priceSorted = driver.findElements(By.xpath("//div[@class='grid-view browse-page-var2 g34 row grid-view-result-active']/ul/li/div[1]/div/div/a/img/following::span[4]"));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
