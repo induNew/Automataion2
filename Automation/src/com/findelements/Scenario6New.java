@@ -3,6 +3,7 @@ package com.findelements;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 	import org.openqa.selenium.By;
@@ -79,14 +80,16 @@ import org.testng.annotations.Listeners;
 			
 			
 			List<WebElement> price = driver.findElements(By.xpath("//div[@class='grid-view browse-page-var2 g34 row grid-view-result-active']/ul/li/div[1]/div/div/a/img/following::span[4]"));
-			ArrayList<String>sortedArray=new ArrayList<String>();
+			ArrayList<WebElement>sortedArray=new ArrayList<>(price);
 			Thread.sleep(2000);
 			
 			List<WebElement> priceSorted = driver.findElements(By.xpath("//div[@class='grid-view browse-page-var2 g34 row grid-view-result-active']/ul/li/div[1]/div/div/a/img/following::span[4]"));
+			ArrayList<WebElement>sortedArray1=new ArrayList<>(price);
+			Thread.sleep(1000);
 			//Collections.sort()(( priceSorted));
 			
 		
-			Assert.assertEquals(price,priceSorted);
+			Assert.assertEquals(sortedArray,sortedArray1,"pass");
 	}
 	}
 
@@ -94,7 +97,14 @@ import org.testng.annotations.Listeners;
 
 
 
-
+//
+//	Set<String>wins=driver.getWindowHandles();
+//	//wins.remove(parent);
+//	
+//	
+//	ArrayList<String>al=new ArrayList<>(wins);
+//	
+	
 
 
 
