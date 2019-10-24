@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
-    <line>
-      <![CDATA[2-2(2 2/16")]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="36946" started-at="2019-10-24T04:41:13Z" finished-at="2019-10-24T04:41:50Z">
+  <suite name="Default suite" duration-ms="47924" started-at="2019-10-24T15:54:57Z" finished-at="2019-10-24T15:55:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="36946" started-at="2019-10-24T04:41:13Z" finished-at="2019-10-24T04:41:50Z">
-      <class name="com.findelements.Scenario8New">
-        <test-method status="PASS" signature="beforeC()[pri:0, instance:com.findelements.Scenario8New@2aafb23c]" name="beforeC" is-config="true" duration-ms="15" started-at="2019-10-24T10:11:13Z" finished-at="2019-10-24T10:11:13Z">
+    <test name="Default test" duration-ms="47924" started-at="2019-10-24T15:54:57Z" finished-at="2019-10-24T15:55:45Z">
+      <class name="com.findelements.GmailCompareSubject$Scenario6New">
+        <test-method status="PASS" signature="beforeC()[pri:0, instance:com.findelements.GmailCompareSubject$Scenario6New@2b80d80f]" name="beforeC" is-config="true" duration-ms="10" started-at="2019-10-24T21:24:57Z" finished-at="2019-10-24T21:24:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeC -->
-        <test-method status="PASS" signature="beforeM()[pri:0, instance:com.findelements.Scenario8New@2aafb23c]" name="beforeM" is-config="true" duration-ms="19278" started-at="2019-10-24T10:11:13Z" finished-at="2019-10-24T10:11:32Z">
+        <test-method status="PASS" signature="beforeM()[pri:0, instance:com.findelements.GmailCompareSubject$Scenario6New@2b80d80f]" name="beforeM" is-config="true" duration-ms="15408" started-at="2019-10-24T21:24:57Z" finished-at="2019-10-24T21:25:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeM -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.findelements.Scenario8New@2aafb23c]" name="test1" duration-ms="17636" started-at="2019-10-24T10:11:32Z" finished-at="2019-10-24T10:11:50Z">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.findelements.GmailCompareSubject$Scenario6New@2b80d80f]" name="test1" duration-ms="32475" started-at="2019-10-24T21:25:13Z" finished-at="2019-10-24T21:25:45Z">
           <reporter-output>
-            <line>
-              <![CDATA[2-2(2 2/16")]]>
-            </line>
           </reporter-output>
         </test-method> <!-- test1 -->
-      </class> <!-- com.findelements.Scenario8New -->
+      </class> <!-- com.findelements.GmailCompareSubject$Scenario6New -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
