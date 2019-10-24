@@ -65,12 +65,16 @@ import org.testng.annotations.Listeners;
 				 Thread.sleep(1000);
 				 driver.findElement(By.xpath("//div[@class='scrollable-list active']/ul/li[1]")).click();
 				Thread.sleep(1000);
-				String name=driver.findElement(By.xpath("//span[@class='select-size']/div/span/span")).getText();
+				String name=driver.findElement(By.xpath("//div[@class='scrollable-list active']/ancestor::span[1]/div/span/span[2]")).getText();
+//				 Reporter.log(name,true);
 				Thread.sleep(1000);
 				driver.findElement(By.id("buy-now")).click();
 				Thread.sleep(1000);
 				//span[@class='size-box-overlay']
 				 String name1=driver.findElement(By.xpath("//span[@class='size-box-overlay']")).getText();
+				 
+				
+				 Reporter.log(name1,true);
 				Assert.assertEquals(name, name1,"pass");
 				
 			
