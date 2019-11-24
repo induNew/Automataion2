@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 
-public class Collection9 {
+public class Collection10 {
 
 	public static void main(String a[]){
 		LinkedList <String>arrl= new LinkedList<>();
@@ -20,9 +20,9 @@ public class Collection9 {
 		arrl.add("baala");
 		arrl.add("fogg");
 		
-        String first = arrl.getFirst();
+        String last= arrl.getLast();
         
-        System.out.println(first);
+        System.out.println(last);
 		
 		
 		

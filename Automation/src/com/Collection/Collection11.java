@@ -5,9 +5,10 @@ package com.Collection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 
-public class Collection9 {
+public class Collection11 {
 
 	public static void main(String a[]){
 		LinkedList <String>arrl= new LinkedList<>();
@@ -20,13 +21,13 @@ public class Collection9 {
 		arrl.add("baala");
 		arrl.add("fogg");
 		
-        String first = arrl.getFirst();
-        
-        System.out.println(first);
-		
-		
-		
+      Iterator<String> descendingIterator = arrl.descendingIterator();
+     while(descendingIterator.hasNext()) {
+      String temp=descendingIterator.next();
+      System.out.println(temp);
 	}
+      }
+	
 }
 
 		
