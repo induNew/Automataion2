@@ -15,7 +15,7 @@ public class Collection18 {
 		hm1.put("aditi","suraj");
 		System.out.println(hm1);
 		
-		Set<Entry<String, String>> entrySet = hm1.entrySet();
+		 Set<Entry<String, String>> entrySet = hm1.entrySet();
 		
 		System.out.println(entrySet);
 	}
